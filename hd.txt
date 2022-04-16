@@ -1,0 +1,2 @@
+chay terminal va nhap : no install het cai path
+pip install -r install.txt
