@@ -7,9 +7,9 @@ def AICONTROLER():
     while TRUE:
         SP,T=ENDAI()
         if T:
-            break
-        else :
             AppChromeControler(SP)
+        else :
+            break
 
 def ENDAI():
     list=['thôi','tạm biệt','đi','biến','lướt','next','goobye']
