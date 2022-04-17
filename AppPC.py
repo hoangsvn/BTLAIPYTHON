@@ -14,8 +14,6 @@ def Applicationcontroler(app):
     elif("powerpoint" in app or "trình chiếu" in app or "chình chiếu" in app):
         powerpoint()
         return False
-    else:
-        Speak_vn("ứng dụng chưa được cài đặt")
     return True
 
 
