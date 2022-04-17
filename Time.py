@@ -3,13 +3,13 @@ from Pyaudiovn import Speak_vn
 def welcome():
     hour = datetime.now().hour
     if hour<=10:
-        Speak_vn("xin chào buổi sáng")
+        Speak_vn("Xin chào buổi sáng")
     elif hour<=12:
-        Speak_vn("xin chào buổi trưa")
+        Speak_vn("Xin chào buổi trưa")
     elif hour<=17:
-        Speak_vn("xin chào buổi chiều")
+        Speak_vn("Xin chào buổi chiều")
     else:
-        Speak_vn("xin chào buổi tối")
+        Speak_vn("Xin chào buổi tối")
     Speak_vn("tôi có thể giúp gì cho bạn")
 def time():
     now = datetime.now()
