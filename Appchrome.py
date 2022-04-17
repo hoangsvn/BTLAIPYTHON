@@ -17,6 +17,9 @@ def AppChromeControler(SP):
     elif ("gmail" in SP or "thư" in SP):
         gmail()
         return False
+    elif ("driver" in SP or "google driver" in SP):
+        Driver()
+        return False
     elif ("giờ" in SP):
         Speak_vn(time())
         return False
@@ -28,6 +31,9 @@ def AppChromeControler(SP):
         return False
     return True
     
+def Driver():
+    webbrowser.get().open('https://drive.google.com')
+    Speak_vn("Vâng! tôi đang mở Driver ?")
 
 def google():
     Speak_vn("bạn muốn tìm gì trên google ạ?")
@@ -40,7 +46,7 @@ def youtube():
     search = listen()
     url = f"https://www.youtube.com/results?search_query={search.replace(' ','+')}"
     webbrowser.get().open(url)
-    Speak_vn(f'vâng! tôi sẽ tìm {search} trên youtube')
+    Speak_vn(f'Vâng! tôi sẽ tìm {search} trên youtube')
 def facebook():
     Speak_vn("mở facebook")
     browser = webdriver.Chrome('.\chromedriver.exe')
@@ -79,8 +85,9 @@ def facebook():
     #     url = f"https://www.facebook.com/search/top?q={nick}"
     # webbrowser.get().open(url)
 def gmail():
-    url = f"https://mail.google.com/mail/u/0/#inbox"
+    url = f"https://mail.google.com"
     webbrowser.get().open(url)
+    Speak_vn("Vâng! tôi đang mở Gmail ?")
 def search():
     wikipedia.set_lang('vi')
     Speak_vn("bạn cần tìm thông tin gì ạ!")
