@@ -32,13 +32,13 @@ def AppChromeControler(SP):
 def google():
     Speak_vn("bạn muốn tìm gì trên google ạ?")
     search = listen().lower()
-    url = f"https://www.google.com/search?q={search}"
+    url = f"https://www.google.com/search?q={search.replace(' ','+')}"
     webbrowser.get().open(url)
     Speak_vn(f'vâng!! tôi sẽ tìm {search} trên google ngay')
 def youtube():
     Speak_vn("bạn muốn xem gì trên youtube ?")
     search = listen()
-    url = f"https://www.youtube.com/?q={search}"
+    url = f"https://www.youtube.com/results?search_query={search.replace(' ','+')}"
     webbrowser.get().open(url)
     Speak_vn(f'vâng! tôi sẽ tìm {search} trên youtube')
 def facebook():
