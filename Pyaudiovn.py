@@ -3,7 +3,7 @@ from gtts import gTTS as GT
 import playsound,os,speech_recognition
 Folder_path='Sound'
 def Speak_vn(s):
-    pathsound =f'{Folder_path}\{s}.mp3'
+    pathsound =f'{Folder_path}\{s.title()}.mp3'
     print("F.R.I.D.A.Y: "+s.title())
     try:
         playsound.playsound(pathsound,True)
