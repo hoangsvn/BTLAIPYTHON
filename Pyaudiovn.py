@@ -27,5 +27,6 @@ def listen():
     return s.lower()
 if __name__=='__main__':
     Speak_vn('Xin chào2')
+    
 
 
