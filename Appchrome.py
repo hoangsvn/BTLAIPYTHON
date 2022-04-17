@@ -19,9 +19,9 @@ def AppChromeControler(SP):
         Speak_vn(time())
     elif("ngày" in Speak):
         Speak_vn(date())
-    elif("application" in Speak or "ứng dụng" in Speak):
+    elif("application" or "ứng" and "dụng" in Speak):
         openApplication()
-    elif("tìm kiếm" in Speak or "thông tin" in Speak):
+    elif("tìm" and "kiếm" or "thông" and "tin" in Speak):
         search()
     else :
         return

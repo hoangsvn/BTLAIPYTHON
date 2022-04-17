@@ -3,14 +3,14 @@ from Pyaudiovn import Speak_vn,listen
 def openApplication():
     Speak_vn("bạn muốn mở ứng dùng nào!")
     for i in range(3):
-        app =listen()
+        app =listen().split()
         if("zalo" in app):
             zalo()
-        elif("word" in app or "soạn thảo văn bản" in app):
+        elif("word" or "soạn" and "thảo" and "văn" and "bản" in app):
             word()
-        elif("excel" in app or "trang tính" in app):
+        elif("excel" or "trang" and "tính" in app):
             excel()
-        elif("powerpoint" in app or "trình chiếu" in app or "chình chiếu" in app):
+        elif("powerpoint" or "trình" and "chiếu" or "chình" and "chiếu" in app):
             powerpoint()
         else:
             Speak_vn("ứng dụng chưa được cài đặt")
@@ -18,16 +18,28 @@ def openApplication():
 
 def zalo():
     Speak_vn("tôi sẽ mở zalo ngay")
-    os.startfile(r"C:\Users\Hoang\AppData\Local\Programs\Zalo\Zalo.exe")
+    try:
+        os.startfile(r"C:\Users\Hoang\AppData\Local\Programs\Zalo\Zalo.exe")
+    except:
+        Speak_vn('Ứng dụng chưa cài đặt')
 def word():
     Speak_vn("mở word")
-    os.startfile(r"C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE")
+    try:
+        os.startfile(r"C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE")
+    except:
+        Speak_vn('Ứng dụng chưa cài đặt')
 def excel():
     Speak_vn("mở excel")
-    os.startfile(r"C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE")
+    try:
+        os.startfile(r"C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE")
+    except:
+        Speak_vn('Ứng dụng chưa cài đặt')
 def powerpoint():
     Speak_vn("mở powerpoint")
-    os.startfile(r"C:\Program Files\Microsoft Office\root\Office16\POWERPNT.EXE")
+    try:
+        os.startfile(r"C:\Program Files\Microsoft Office\root\Office16\POWERPNT.EXE")
+    except:
+        Speak_vn('Ứng dụng chưa cài đặt')
 def search():
     wikipedia.set_lang('vi')
     Speak_vn("bạn cần tìm thông tin gì ạ!")
