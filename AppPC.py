@@ -1,4 +1,4 @@
-import os,wikipedia
+import os
 from Pyaudiovn import Speak_vn,listen
 def openApplication():
     Speak_vn("Bạn muốn mở ứng dùng nào!")

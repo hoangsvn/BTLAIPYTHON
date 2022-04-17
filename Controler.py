@@ -1,13 +1,16 @@
-from time import sleep
 from pickle import TRUE
 from Appchrome import AppChromeControler
 from Pyaudiovn import listen,Speak_vn
+from System import systemInfo
 
 def AICONTROLER():
     while TRUE:
         SP,T=ENDAI()
         if T:
-            AppChromeControler(SP)
+            if "info" in SP or "systeminfo" in SP:
+                systemInfo()
+            else:
+                AppChromeControler(SP)
         else :
             break
 
