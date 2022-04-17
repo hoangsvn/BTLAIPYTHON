@@ -2,7 +2,7 @@ from gtts import gTTS as GT
 import playsound,os,speech_recognition
 
 def Speak_vn(s):
-    pathsound ='speech.mp3'
+    pathsound ='sound\speech.mp3'
     print("F.R.I.D.A.Y: "+s.title())
     GT(text=s, lang='vi', slow=False).save(pathsound)
     playsound.playsound(pathsound,True)
