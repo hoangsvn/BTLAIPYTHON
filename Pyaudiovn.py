@@ -12,14 +12,19 @@ def Speak_vn(s):
             GT(text=s, lang='vi', slow=False).save(pathsound)
         except:
             os.mkdir(Folder_path)
+            GT(text=s, lang='vi', slow=False).save(pathsound)
         History(pathsound)
         playsound.playsound(pathsound,True)
 
 def ReadHitory():
     path = f'{Folder_path}/history.txt'
     list=[]
-    with open(path, 'r', encoding='UTF-8') as File:
-        list=File.readlines()
+    try:
+        with open(path, 'r', encoding='UTF-8') as File:
+            list=File.readlines()
+    except:
+        with open(path, 'a+', encoding='UTF-8') as File:
+            return list
     return list
 def History(string):
     path = f'{Folder_path}/history.txt'
