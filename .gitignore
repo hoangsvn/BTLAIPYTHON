@@ -2,3 +2,6 @@ __pycache__
 ven1
 speech.mp3
 p.py
+dist
+build
+main.spec
