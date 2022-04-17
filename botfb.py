@@ -26,7 +26,7 @@ def search_facebook(browser,key):
 def cuon_xuong(browser,n):
     browser.execute_script("window.scroll(0,%d)" %int(n))
 if __name__ == "__main__":
-    browser = webdriver.Chrome(r"C:\Users\Administrator\Documents\workspace\python\friday\chromedriver.exe")
+    browser = webdriver.Chrome(".\chromedriver.exe")
     try :
         open_facebook(security.USERNAME,security.PASSWORD,browser)
         sleep(random.randint(5,7))
