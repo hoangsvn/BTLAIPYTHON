@@ -8,6 +8,9 @@ def Systemcontroler(S):
 	elif "cmd" in S or "command line" in S:
 		Cmd()
 		return False
+	elif "camera" in S or "máy ảnh" in S:
+		Camera()
+		return False
 	elif "info" in S or "systeminfo" in S:
 		systemInfo()
 		return False
@@ -35,6 +38,8 @@ def Explorer():
 def Cmd():
 	Speak_vn('Đang mở Command Line')
 	os.startfile('C:\Windows\System32\cmd.exe')
+def Camera():
+	Speak_vn('Đang mở Camera')
+	os.system('start microsoft.windows.camera:')
 if __name__=='__main__':
-	Explorer()
-	Cmd()
+	Camera()
