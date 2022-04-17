@@ -4,7 +4,7 @@ from time import sleep
 from Time import time,date
 from Pyaudiovn import Speak_vn,listen
 def AppChromeControler(SP):
-    print(2)
+    
     if("google" in SP):
         google()
         return False
