@@ -13,6 +13,8 @@ pythom -m venv ven
 tiếp theo chay lệnh 
 .\ven\Scripts\activate
 
+nó hiện (ven) oke
+
 tiếp theo chay lệnh 
 
 pip install -r .\install.txt
