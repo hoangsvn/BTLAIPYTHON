@@ -14,7 +14,7 @@ def Speak_vn(s):
             os.mkdir(Folder_path)
         History(pathsound)
         playsound.playsound(pathsound,True)
-        
+
 def ReadHitory():
     path = f'{Folder_path}/history.txt'
     list=[]
