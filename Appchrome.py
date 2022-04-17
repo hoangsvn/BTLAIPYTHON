@@ -6,25 +6,23 @@ from Time import time,date
 from Pyaudiovn import Speak_vn,listen
 from AppPC import openApplication
 def AppChromeControler(SP):
-    Speak=SP.split()
-    if("google" in Speak):
+    if("google" in SP):
         google()
-    elif("youtube" in Speak):
+    elif("youtube" in SP):
         youtube()
-    elif ("facebook" in Speak):
+    elif ("facebook" in SP):
         facebook()
-    elif ("gmail" in Speak or "thư" in Speak):
+    elif ("gmail" in SP or "thư" in SP):
         gmail()
-    elif ("giờ" in Speak):
+    elif ("giờ" in SP):
         Speak_vn(time())
-    elif("ngày" in Speak):
+    elif("ngày" in SP):
         Speak_vn(date())
-    elif("application" or "ứng" and "dụng" in Speak):
+    elif("application" in SP or "ứng dụng" in SP):
         openApplication()
-    elif("tìm" and "kiếm" or "thông" and "tin" in Speak):
+    elif("tìm kiếm" in SP or "thông tin" in SP):
         search()
-    else :
-        return
+    
 
 def google():
     Speak_vn("bạn muốn tìm gì trên google ạ?")
