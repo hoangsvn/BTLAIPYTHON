@@ -1,0 +1,22 @@
+Cách cai Venv cho từng máy file(ven_trolyao)  
+Mở VS CODE lên :
+Mở Folder :trolyao_python
+có thể xóa file (ven_trolyao) tùy
+mỏ terminal trên vs CODE
+chạy lệnh có rồi thì thôi
+
+pip install virtualenv
+
+tiếp theo chay lệnh 
+pythom -m venv ven
+
+tiếp theo chay lệnh 
+.\ven\Scripts\activate
+
+tiếp theo chay lệnh 
+
+pip install -r .\install.txt
+
+Chúc các bạn thành công
+
+chromedriver ban pai tai phien ban phu hop voi phien ban chrome dang dung tren may
