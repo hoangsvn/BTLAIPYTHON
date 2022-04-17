@@ -11,21 +11,6 @@ def Speak_vn(s):
         GT(text=s, lang='vi', slow=False).save(pathsound)
         playsound.playsound(pathsound,True)
 
-
-def ReadHitory():
-    path = f'{Folder_path}/history.txt'
-    list=[]
-    try:
-        with open(path, 'r', encoding='UTF-8') as File:
-            list=File.readlines()
-    except:
-        with open(path, 'a+', encoding='UTF-8') as File:
-            return list
-    return list
-def History(string):
-    path = f'{Folder_path}/history.txt'
-    with open(path, 'a+', encoding='UTF-8') as File:
-        File.write(string+"\n")
 def listen():
     bot = speech_recognition.Recognizer()
     with speech_recognition.Microphone() as mic:
