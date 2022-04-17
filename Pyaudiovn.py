@@ -1,24 +1,30 @@
+from re import S
 from gtts import gTTS as GT
 import playsound,os,speech_recognition
 Folder_path='Sound'
 def Speak_vn(s):
-    list=ReadHitory()
-    pathsound =f'{Folder_path}\speech{len(list)}.mp3'
+    pathsound =f'{Folder_path}\{s}.mp3'
     print("F.R.I.D.A.Y: "+s.title())
-    try:
-        GT(text=s, lang='vi', slow=False).save(pathsound)
-    except:
-        os.mkdir(Folder_path)
-        GT(text=s, lang='vi', slow=False).save(pathsound)
-    playsound.playsound(pathsound,True)
-    os.remove(pathsound)
+    if pathsound in ReadHitory():
+        playsound.playsound(pathsound,True)
+    else :
+        try:
+            GT(text=s, lang='vi', slow=False).save(pathsound)
+        except:
+            os.mkdir(Folder_path)
+        History(pathsound)
+        playsound.playsound(pathsound,True)
+        
 def ReadHitory():
     path = f'{Folder_path}/history.txt'
     list=[]
     with open(path, 'r', encoding='UTF-8') as File:
         list=File.readlines()
     return list
-    
+def History(string):
+    path = f'{Folder_path}/history.txt'
+    with open(path, 'a+', encoding='UTF-8') as File:
+        File.write(string)
 def listen():
     bot = speech_recognition.Recognizer()
     with speech_recognition.Microphone() as mic:
