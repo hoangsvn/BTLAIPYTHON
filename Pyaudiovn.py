@@ -2,7 +2,8 @@ from gtts import gTTS as GT
 import playsound,os,speech_recognition
 Folder_path='Sound'
 def Speak_vn(s):
-    pathsound =f'{Folder_path}\speech.mp3'
+    list=ReadHitory()
+    pathsound =f'{Folder_path}\speech{len(list)}.mp3'
     print("F.R.I.D.A.Y: "+s.title())
     try:
         GT(text=s, lang='vi', slow=False).save(pathsound)
@@ -32,8 +33,8 @@ def listen():
     print("You say: "+s)
     return s.lower()
 if __name__=='__main__':
-    # Speak_vn('Xin chào2')
-    ReadHitory()
+    Speak_vn('Xin chào2')
+    # ReadHitory()
 
 
 
