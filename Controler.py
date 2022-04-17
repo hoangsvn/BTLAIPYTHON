@@ -8,10 +8,12 @@ def AICONTROLER():
     while TRUE:
         SP,T=ENDAI()
         if T:
-            if  Systemcontroler(SP):
-                if AppChromeControler(SP):
-                    if Applicationcontroler(SP):
-                        continue
+            if Systemcontroler(SP)!=True:
+                continue
+            elif AppChromeControler(SP)!=True:
+                continue
+            elif Applicationcontroler(SP)!=True:
+                continue
         else :
             break
 
