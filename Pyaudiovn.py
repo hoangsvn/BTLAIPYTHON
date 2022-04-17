@@ -2,13 +2,13 @@ from re import S
 from gtts import gTTS as GT
 import playsound,os,speech_recognition
 Folder_path='Sound'
-def Speak_vn(s):
-    pathsound =f'{Folder_path}\{s.title()}.mp3'
-    print("F.R.I.D.A.Y: "+s.title())
+def Speak_vn(Speak):
+    pathsound =f'{Folder_path}\{Speak.title()}.mp3'
+    print("F.R.I.D.A.Y: "+Speak.title())
     try:
         playsound.playsound(pathsound,True)
     except:
-        GT(text=s, lang='vi', slow=False).save(pathsound)
+        GT(text=Speak, lang='vi', slow=False).save(pathsound)
         playsound.playsound(pathsound,True)
 
 def listen():
@@ -25,7 +25,7 @@ def listen():
     print("You say: "+s)
     return s.lower()
 if __name__=='__main__':
-    Speak_vn('Xin chào2')
+    Speak_vn('Xin chào1')
     Speak_vn('Xin chào2')
     Speak_vn('Xin chào2')
     Speak_vn('Xin chào2')
