@@ -2,12 +2,12 @@ from gtts import gTTS as GT
 import playsound,os,speech_recognition
 
 def Speak_vn(s):
-    pathsound ='sound\speech.mp3'
+    pathsound ='Sound\speech.mp3'
     print("F.R.I.D.A.Y: "+s.title())
     try:
         GT(text=s, lang='vi', slow=False).save(pathsound)
     except:
-        os.mkdir('sound')
+        os.mkdir('Sound')
         GT(text=s, lang='vi', slow=False).save(pathsound)
     playsound.playsound(pathsound,True)
     os.remove(pathsound)
