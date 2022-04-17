@@ -5,16 +5,12 @@ Folder_path='Sound'
 def Speak_vn(s):
     pathsound =f'{Folder_path}\{s}.mp3'
     print("F.R.I.D.A.Y: "+s.title())
-    if pathsound in ReadHitory():
+    try:
         playsound.playsound(pathsound,True)
-    else :
-        try:
-            GT(text=s, lang='vi', slow=False).save(pathsound)
-        except:
-            os.mkdir(Folder_path)
-            GT(text=s, lang='vi', slow=False).save(pathsound)
-        History(pathsound)
+    except:
+        GT(text=s, lang='vi', slow=False).save(pathsound)
         playsound.playsound(pathsound,True)
+
 
 def ReadHitory():
     path = f'{Folder_path}/history.txt'
@@ -29,7 +25,7 @@ def ReadHitory():
 def History(string):
     path = f'{Folder_path}/history.txt'
     with open(path, 'a+', encoding='UTF-8') as File:
-        File.write(string)
+        File.write(string+"\n")
 def listen():
     bot = speech_recognition.Recognizer()
     with speech_recognition.Microphone() as mic:
@@ -45,6 +41,17 @@ def listen():
     return s.lower()
 if __name__=='__main__':
     Speak_vn('Xin chào2')
+    Speak_vn('Xin chào2')
+    Speak_vn('Xin chào2')
+    Speak_vn('Xin chào2')
+    Speak_vn('Xin chào2')
+    Speak_vn('Xin chào2')
+    Speak_vn('Xin chào2')
+    Speak_vn('Xin chào4')
+    Speak_vn('Xin chào2')
+    Speak_vn('Xin chào2')
+    Speak_vn('Xin chào2')
+
     # ReadHitory()
 
 
