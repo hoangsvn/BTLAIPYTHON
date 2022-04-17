@@ -29,7 +29,7 @@ def AppChromeControler(SP):
 def google():
     Speak_vn("bạn muốn tìm gì trên google ạ?")
     search = listen().lower()
-    url = f"https://www.youtube.com/results?search_query=={search}"
+    url = f"https://www.google.com/search?q={search}"
     webbrowser.get().open(url)
     Speak_vn(f'vâng!! tôi sẽ tìm {search} trên google ngay')
 def youtube():
