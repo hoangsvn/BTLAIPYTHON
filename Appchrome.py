@@ -1,27 +1,32 @@
 from selenium import webdriver
 import webbrowser, security ,botfb,wikipedia
-from pickle import TRUE
 from time import sleep
 from Time import time,date
 from Pyaudiovn import Speak_vn,listen
-from AppPC import openApplication
 def AppChromeControler(SP):
+    print(2)
     if("google" in SP):
         google()
+        return False
     elif("youtube" in SP):
         youtube()
+        return False
     elif ("facebook" in SP):
         facebook()
+        return False
     elif ("gmail" in SP or "thư" in SP):
         gmail()
+        return False
     elif ("giờ" in SP):
         Speak_vn(time())
+        return False
     elif("ngày" in SP):
         Speak_vn(date())
-    elif("application" in SP or "ứng dụng" in SP):
-        openApplication()
+        return False
     elif("tìm kiếm" in SP or "thông tin" in SP):
         search()
+        return False
+    return True
     
 
 def google():

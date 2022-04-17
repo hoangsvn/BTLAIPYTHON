@@ -22,3 +22,8 @@ pip install -r .\install.txt
 Chúc các bạn thành công
 
 chromedriver ban pai tai phien ban phu hop voi phien ban chrome dang dung tren may
+
+khi chay ai 
+ban noi: mở youtube
+ban noi: mở Zalo
+ban noi: mở file

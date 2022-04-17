@@ -1,19 +1,23 @@
 import os
 from Pyaudiovn import Speak_vn,listen
-def openApplication():
-    Speak_vn("Bạn muốn mở ứng dùng nào!")
-    for i in range(3):
-        app =listen().lower().split()
-        if("zalo" in app):
-            zalo()
-        elif("word" in app or "soạn thảo văn bản" in app):
-            word()
-        elif("excel" in app or "trang tính" in app):
-            excel()
-        elif("powerpoint" in app or "trình chiếu" in app or "chình chiếu" in app):
-            powerpoint()
-        else:
-            Speak_vn("ứng dụng chưa được cài đặt")
+def Applicationcontroler(app):
+    app =app.lower().split()
+    print(3)
+    if("zalo" in app):
+        zalo()
+        return False
+    elif("word" in app or "soạn thảo văn bản" in app):
+        word()
+        return False
+    elif("excel" in app or "trang tính" in app):
+        excel()
+        return False
+    elif("powerpoint" in app or "trình chiếu" in app or "chình chiếu" in app):
+        powerpoint()
+        return False
+    else:
+        Speak_vn("ứng dụng chưa được cài đặt")
+    return True
 
 
 def zalo():
