@@ -48,7 +48,7 @@ def youtube():
     webbrowser.get().open(url)
     Speak_vn(f'Vâng! tôi sẽ tìm {search} trên youtube')
 def facebook():
-    Speak_vn("mở facebook")
+    Speak_vn("Đang mở facebook")
     browser = webdriver.Chrome('.\chromedriver.exe')
     # mỏ facebook
     botfb.open_facebook(security.USERNAME,security.PASSWORD,browser)

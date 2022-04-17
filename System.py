@@ -11,8 +11,11 @@ def Systemcontroler(S):
 	elif "camera" in S or "máy ảnh" in S:
 		Camera()
 		return False
-	elif "info" in S or "systeminfo" in S:
+	elif "info" in S or "systeminfo" in S or "thông tin máy tính" in S:
 		systemInfo()
+		return False
+	elif 'caculator' in S or 'máy tính' in S:
+		Calc()
 		return False
 	return True
 def systemInfo():
@@ -33,13 +36,18 @@ def systemInfo():
 	print (string)
 
 def Explorer():
-	Speak_vn('Đang mở File Explorer')
 	os.startfile('C:\Windows\explorer.exe')
+	Speak_vn('Đang mở File Explorer')
 def Cmd():
-	Speak_vn('Đang mở Command Line')
 	os.startfile('C:\Windows\System32\cmd.exe')
+	Speak_vn('Đang mở Command Line')
+def Calc():
+	os.startfile('C:\Windows\System32\calc.exe')
+	Speak_vn('Đang mở Máy tính')
 def Camera():
-	Speak_vn('Đang mở Camera')
 	os.system('start microsoft.windows.camera:')
+	Speak_vn('Đang mở Camera')
+
+
 if __name__=='__main__':
 	Camera()
