@@ -1,34 +1,35 @@
 from selenium import webdriver
-import webbrowser, security ,botfb
+import webbrowser, security ,botfb,wikipedia
 from pickle import TRUE
 from time import sleep
 from Time import time,date
 from Pyaudiovn import Speak_vn,listen
-from AppPC import openApplication,search
-def AppChromeControler():
-    while TRUE:
-        s = listen()
-        if("google" in s):
-            google()
-        elif("youtube" in s):
-            youtube()
-        elif ("facebook" in s):
-            facebook()
-        elif ("gmail" in s or "thư" in s):
-            gmail()
-        elif ("giờ" in s):
-            Speak_vn(time())
-        elif("ngày" in s):
-            Speak_vn(date())
-        elif("application" in s or "ứng dụng" in s):
-            openApplication()
-        elif("tìm kiếm" in s or "thông tin" in s):
-            search()
+from AppPC import openApplication
+def AppChromeControler(SP):
+    Speak=SP.split()
+    if("google" in Speak):
+        google()
+    elif("youtube" in Speak):
+        youtube()
+    elif ("facebook" in Speak):
+        facebook()
+    elif ("gmail" in Speak or "thư" in Speak):
+        gmail()
+    elif ("giờ" in Speak):
+        Speak_vn(time())
+    elif("ngày" in Speak):
+        Speak_vn(date())
+    elif("application" in Speak or "ứng dụng" in Speak):
+        openApplication()
+    elif("tìm kiếm" in Speak or "thông tin" in Speak):
+        search()
+    else :
+        return
 
 def google():
     Speak_vn("bạn muốn tìm gì trên google ạ?")
     search = listen().lower()
-    url = f"https://www.google.com/search?q={search}"
+    url = f"https://www.youtube.com/results?search_query=={search}"
     webbrowser.get().open(url)
     Speak_vn(f'vâng!! tôi sẽ tìm {search} trên google ngay')
 def youtube():
@@ -77,3 +78,9 @@ def facebook():
 def gmail():
     url = f"https://mail.google.com/mail/u/0/#inbox"
     webbrowser.get().open(url)
+def search():
+    wikipedia.set_lang('vi')
+    Speak_vn("bạn cần tìm thông tin gì ạ!")
+    key = listen()
+    data =  wikipedia.summary(key,1)
+    Speak_vn(data)

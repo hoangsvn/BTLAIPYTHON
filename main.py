@@ -1,5 +1,5 @@
 from Time import welcome
-from AppControler import AICONTROLER
+from AIAPPControler import AICONTROLER
 
 if __name__ == "__main__":
     welcome()
