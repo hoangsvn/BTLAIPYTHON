@@ -104,3 +104,7 @@ def search():
     key = listen()
     data =  wikipedia.summary(key,1)
     Speak_vn(data)
+def Zalo():
+    url='https://chat.zalo.me'
+    Speak_vn('Đang mở zalo web')
+    webbrowser.get().open(url)
