@@ -18,8 +18,8 @@ def AICONTROLER():
             break
 
 def ENDAI():
-    list=['thôi','tạm biệt','đi','biến','lướt','thoát','exit','next','goobye']
-    Speak=listen()
+    list=['thôi','tạm biệt','đi','biến','lướt','thoát','exit','next','goodbye']
+    Speak=listen().lower()
     if Speak!='' and Speak in list:
         Speak_vn('Xin chào hẹn gặp lại')
         return Speak,False
