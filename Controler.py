@@ -14,6 +14,8 @@ def AICONTROLER():
                 continue
             elif Applicationcontroler(SP)!=True:
                 continue
+            else:
+                Speak_vn('Tôi không hiểu ?')
         else :
             break
 
