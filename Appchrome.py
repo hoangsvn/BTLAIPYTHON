@@ -47,11 +47,16 @@ def google():
     webbrowser.get().open(url)
     Speak_vn(f'vâng!! tôi sẽ tìm {search} trên google ngay')
 def youtube():
-    Speak_vn("bạn muốn xem gì trên youtube ?")
-    search = listen()
-    url = f"https://www.youtube.com/results?search_query={search.replace(' ','+')}"
+    Speak_vn("Đang mở YouTube ")
+    url='https://www.youtube.com'
     webbrowser.get().open(url)
-    Speak_vn(f'Vâng! tôi sẽ tìm {search} trên youtube')
+    Speak_vn("Bạn muốn xem gì trên youtube ?")
+    search = listen()
+    if ('không' or 'no') not in search:
+        url = f"https://www.youtube.com/results?search_query={search.replace(' ','+')}"
+        webbrowser.get().open(url)
+        Speak_vn(f'Vâng! tôi sẽ tìm {search} trên youtube')
+
 def facebook():
     Speak_vn("Đang mở facebook")
     browser = webdriver.Chrome('.\chromedriver.exe')
