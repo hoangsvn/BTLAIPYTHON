@@ -18,6 +18,7 @@ nó hiện (ven) oke
 tiếp theo chay lệnh 
 
 pip install -r .\install.txt
+pip install .\PyAudio-0.2.11-cp310-cp310-win_amd64.whl
 
 Chúc các bạn thành công
 
