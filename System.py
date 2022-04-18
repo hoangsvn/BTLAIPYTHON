@@ -48,6 +48,5 @@ def Camera():
 	os.system('start microsoft.windows.camera:')
 	Speak_vn('Đang mở Camera')
 
-
 if __name__=='__main__':
-	Camera()
+	Calc()
