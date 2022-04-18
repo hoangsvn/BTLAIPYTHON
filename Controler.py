@@ -1,5 +1,5 @@
 from pickle import TRUE
-from Appchrome import AppChromeControler
+from Appchrome import AppChromeControler,googlesearch
 from Pyaudiovn import listen,Speak_vn
 from System import Systemcontroler
 from AppPC import Applicationcontroler
@@ -15,7 +15,7 @@ def AICONTROLER():
             elif Applicationcontroler(SP)!=True:
                 continue
             else:
-                Speak_vn('Tôi không hiểu ?')
+                googlesearch(SP)
         else :
             break
 

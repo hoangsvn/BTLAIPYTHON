@@ -34,6 +34,12 @@ def Driver():
     webbrowser.get().open('https://drive.google.com')
     Speak_vn("Vâng! tôi đang mở Driver ?")
 
+def googlesearch(SP):
+    if SP!='':
+        url = f"https://www.google.com/search?q={SP.replace(' ','+')}"
+        webbrowser.get().open(url)
+        Speak_vn('Đang tìm kiếm trên Google')
+    
 def google():
     Speak_vn("bạn muốn tìm gì trên google ạ?")
     search = listen().lower()
