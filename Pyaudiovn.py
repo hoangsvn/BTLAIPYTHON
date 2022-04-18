@@ -42,7 +42,7 @@ if __name__=='__main__':
     Speak_vn('Xin chào2')
     Speak_vn('Xin chào2')
 
-    # ReadHitory()
+    
 
 
 
