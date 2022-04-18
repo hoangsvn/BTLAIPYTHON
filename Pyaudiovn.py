@@ -1,9 +1,9 @@
-from re import S
+from re import sub
 from gtts import gTTS as GT
 import playsound,os,speech_recognition
 Speak_Folder='Sound'
 def Speak_vn(Speak):
-    Sp=str(Speak).strip('*\/?":><|').title()
+    Sp=sub(r'[^\w\d\s]+', ' ', Speak).title()
     pathsound =f'{Speak_Folder}\{Sp}.mp3'
     print("F.R.I.D.A.Y: "+Speak.title())
     try:
@@ -29,6 +29,7 @@ def listen():
         s=''
     print("You say: "+s)
     return s.lower()
+
 if __name__=='__main__':
     Speak_vn('Xin chào1')
     Speak_vn('Xin chào2')
