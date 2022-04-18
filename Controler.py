@@ -1,11 +1,10 @@
-from pickle import TRUE
 from Appchrome import AppChromeControler,googlesearch
 from Pyaudiovn import listen,Speak_vn
 from System import Systemcontroler
 from AppPC import Applicationcontroler
 
 def AICONTROLER():
-    while TRUE:
+    while True:
         SP,T=ENDAI()
         if T:
             if Systemcontroler(SP)!=True:
