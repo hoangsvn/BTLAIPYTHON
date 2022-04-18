@@ -1,15 +1,19 @@
 from re import S
 from gtts import gTTS as GT
 import playsound,os,speech_recognition
-Folder_path='Sound'
+Speak_Folder='Sound'
 def Speak_vn(Speak):
     Sp=str(Speak).strip('*\/?":><|')
-    pathsound =f'{Folder_path}\{Sp}.mp3'
+    pathsound =f'{Speak_Folder}\{Sp}.mp3'
     print("F.R.I.D.A.Y: "+Speak.title())
     try:
         playsound.playsound(pathsound,True)
     except:
-        GT(text=Speak, lang='vi', slow=False).save(pathsound)
+        try:
+            GT(text=Speak, lang='vi', slow=False).save(pathsound)
+        except:
+            os.mkdir(Speak_Folder)
+            GT(text=Speak, lang='vi', slow=False).save(pathsound)
         playsound.playsound(pathsound,True)
 
 def listen():
