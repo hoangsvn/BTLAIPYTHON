@@ -1,4 +1,5 @@
-import wmi,os
+from random import randint
+import wmi,os,threading
 from Pyaudiovn import Speak_vn
 def Systemcontroler(S):
 	S=str(S)
@@ -47,6 +48,10 @@ def Calc():
 def Camera():
 	os.system('start microsoft.windows.camera:')
 	Speak_vn('Đang mở Camera')
-
+def audio():
+	path=f'C:\\Users\\{os.getlogin()}\\Music'
+	list=os.listdir(path=path)
+	Speak_vn(f'Bạn có {len(list)} bài hát tôi sẻ phát ngẫu nhiên một bài')
+	threading.Thread(target=os.system(f'{path}\{list[randint(0,len(list))]}'))
 if __name__=='__main__':
-	Calc()
+	audio()
