@@ -5,7 +5,7 @@ Speak_Folder='Sound'
 def Speak_vn(Speak):
     Sp=sub(r'[^\w\d\s]+', ' ', Speak).title().strip()
     pathsound =f'{Speak_Folder}\{Sp}.mp3'
-    print("F.R.I.D.A.Y: "+Speak.title())
+    print("F.R.I.D.A.Y: "+str(Speak).title())
     try:
         playsound.playsound(pathsound,True)
     except:
