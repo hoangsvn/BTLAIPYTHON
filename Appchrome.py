@@ -4,8 +4,8 @@ from time import sleep
 from Time import time,date
 from Pyaudiovn import Speak_vn,listen
 def AppChromeControler(SP):
-    if("google" in SP):
-        google()
+    if ("drive" in SP ):
+        Driver()
         return False
     elif("youtube" in SP):
         youtube()
@@ -16,8 +16,8 @@ def AppChromeControler(SP):
     elif ("gmail" in SP or "thư" in SP):
         gmail()
         return False
-    elif ("driver" in SP or "google driver" in SP):
-        Driver()
+    elif("google" in SP):
+        google()
         return False
     elif ("giờ" in SP):
         Speak_vn(time())

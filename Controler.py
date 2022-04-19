@@ -17,7 +17,7 @@ def AICONTROLER():
             
 def ENDAI():
     list=['thôi','tạm biệt','đi','biến ','lướt','thoát','exit','next','goodbye']
-    Speak=listen().lower()
+    Speak=listen()
     if  Speak in list:
         Speak_vn('Xin chào hẹn gặp lại')
         raise SystemExit(0)

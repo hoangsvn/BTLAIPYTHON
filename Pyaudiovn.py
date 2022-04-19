@@ -23,11 +23,11 @@ def listen():
         bot.pause_threshold = 1 #dung 2s roi nghe lenh moi
         audio = bot.listen(mic)
     try:
-        Speak=bot.recognize_google(audio, language="vi-VN")
+        AIlisten=bot.recognize_google(audio, language="vi-VN")
     except:
         listen()
-    print("You say : "+Speak)
-    return Speak.lower()
+    print("You say : "+AIlisten)
+    return AIlisten.lower()
 
 if __name__=='__main__':
     listen()
