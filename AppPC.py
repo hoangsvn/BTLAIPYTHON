@@ -1,7 +1,6 @@
 import os
 from Pyaudiovn import Speak_vn,listen
 def Applicationcontroler(app):
-    app =app.lower()
     if("zalo" in app):
         zalo()
         return False

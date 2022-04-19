@@ -1,7 +1,7 @@
 import wmi,os
 from Pyaudiovn import Speak_vn
 def Systemcontroler(S):
-	S=str(S).lower()
+	S=str(S)
 	if "file" in S or "explorer" in S:
 		Explorer()
 		return False
