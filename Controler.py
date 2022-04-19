@@ -12,8 +12,8 @@ def AICONTROLER():
             continue
         elif Applicationcontroler(SP)!=True:
             continue
-        else:
-            googlesearch(SP)
+        # else:
+        #     googlesearch(SP)
             
 def ENDAI():
     list=['thôi','tạm biệt','đi','biến ','lướt','thoát','exit','next','goodbye']
