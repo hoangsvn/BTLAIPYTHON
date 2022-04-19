@@ -9,6 +9,9 @@ def Systemcontroler(S):
 	elif "cmd" in S or "command line" in S:
 		Cmd()
 		return False
+	elif "music" in S or "nhạc" in S:
+		audio()
+		return False
 	elif "camera" in S or "máy ảnh" in S:
 		Camera()
 		return False
@@ -51,7 +54,10 @@ def Camera():
 def audio():
 	path=f'C:\\Users\\{os.getlogin()}\\Music'
 	list=os.listdir(path=path)
-	Speak_vn(f'Bạn có {len(list)} bài hát tôi sẻ phát ngẫu nhiên một bài')
-	threading.Thread(target=os.system(f'{path}\{list[randint(0,len(list))]}'))
+	if len(list)>0:
+		Speak_vn(f'Tôi sẻ phát ngẫu nhiên một bài')
+		threading.Thread(target=os.system(f'{path}\{list[randint(0,len(list))]}'))
+	else:
+		Speak_vn('Bạn không có bài hát nào ')
 if __name__=='__main__':
 	audio()
