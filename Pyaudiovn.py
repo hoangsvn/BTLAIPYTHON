@@ -29,9 +29,9 @@ def listen():
             Mod=1
             AIlisten = 'I am sorry'
     if Mod==1:
-        print("F.R.I.D.A.Y: "+AIlisten)
+        print("F.R.I.D.A.Y: "+AIlisten.title())
     else:
-        print("You say : "+AIlisten)
+        print("You say : "+AIlisten.title())
     return str(AIlisten).lower()
 
 if __name__=='__main__':

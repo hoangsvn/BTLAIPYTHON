@@ -54,9 +54,10 @@ def Camera():
 def audio():
 	path=f'C:\\Users\\{os.getlogin()}\\Music'
 	list=os.listdir(path=path)
-	if len(list)>0:
+	lenl=len(list)
+	if lenl>0:
 		Speak_vn(f'Tôi sẻ phát ngẫu nhiên một bài')
-		threading.Thread(target=os.system(f'{path}\{list[randint(0,len(list))]}'))
+		threading.Thread(target=os.system(f'{path}\{list[randint(0,lenl-1)]}'))
 	else:
 		Speak_vn('Bạn không có bài hát nào ')
 if __name__=='__main__':
