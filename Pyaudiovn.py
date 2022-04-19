@@ -18,16 +18,14 @@ def Speak_vn(Speak):
 
 def listen():
     bot = speech_recognition.Recognizer()
-    AIlisten = 'I am sory'
     with speech_recognition.Microphone() as mic:
         print("F.R.I.D.A.Y: listening... ")
         bot.pause_threshold = 1 #dung 2s roi nghe lenh moi
         audio = bot.listen(mic)
         try:
             AIlisten=bot.recognize_google(audio, language="vi-VN")
-        except speech_recognition.UnknownValueError:
-            audio = bot.listen(mic)
-
+        except:
+            AIlisten = 'I am sory'
 
     print("You say : "+AIlisten)
     return str(AIlisten).lower()
