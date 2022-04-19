@@ -18,6 +18,7 @@ def Speak_vn(Speak):
 
 def listen():
     bot = speech_recognition.Recognizer()
+    Mod=0
     with speech_recognition.Microphone() as mic:
         print("F.R.I.D.A.Y: listening... ")
         bot.pause_threshold = 1 #dung 2s roi nghe lenh moi
@@ -25,9 +26,12 @@ def listen():
         try:
             AIlisten=bot.recognize_google(audio, language="vi-VN")
         except:
-            AIlisten = 'I am sory'
-
-    print("You say : "+AIlisten)
+            Mod=1
+            AIlisten = 'I am sorry'
+    if Mod==1:
+        print("F.R.I.D.A.Y: "+AIlisten)
+    else:
+        print("You say : "+AIlisten)
     return str(AIlisten).lower()
 
 if __name__=='__main__':
