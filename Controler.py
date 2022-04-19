@@ -3,25 +3,32 @@ from Pyaudiovn import listen,Speak_vn
 from System import Systemcontroler
 from AppPC import Applicationcontroler
 
-def AICONTROLER():
-    while True:
-        SP=ENDAI()
-        if Systemcontroler(SP)!=True:
-            continue
-        elif AppChromeControler(SP)!=True:
-            continue
-        elif Applicationcontroler(SP)!=True:
-            continue
-        # else:
-        #     googlesearch(SP)
             
-def ENDAI():
-    list=['thôi','tạm biệt','đi','biến ','lướt','thoát','exit','next','goodbye']
-    Speak=listen()
-    if  Speak in list:
-        Speak_vn('Xin chào hẹn gặp lại')
-        raise SystemExit(0)
-    return Speak
+def ENDAI(SP):
+    list=['thôi','tạm biệt','thoát','exit','goodbye']
+    for i in list:
+        if i in SP:
+            return True
+    return False
 
+def Runquery(SP):
+    Systemcontroler(SP)
+    AppChromeControler(SP)
+    Applicationcontroler(SP)
+
+def Runing():
+    Mode=0
+    while True:
+        Speak=listen()
+        if Mode==0 and 'máy tính' in Speak:
+            Speak=str(Speak).replace('máy tính',' ',1)
+            Mode=1
+        if Mode==1:
+            if ENDAI(Speak):
+                Mode=0
+                Speak_vn('Hảy gọi máy tính tôi sẻ chở lại :')
+            else:
+                Runquery(Speak)
+        
 if __name__=='__main__':
-    AICONTROLER()
+    Runing()
