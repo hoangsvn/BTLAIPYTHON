@@ -23,7 +23,7 @@ def Runing():
         if Mode==0 and 'máy tính' in Speak:
             Speak=str(Speak).replace('máy tính',' ',1)
             Mode=1
-        if Mode==1:
+        elif Mode==1:
             if ENDAI(Speak):
                 Mode=0
                 Speak_vn('Hảy gọi máy tính tôi sẻ chở lại :')
